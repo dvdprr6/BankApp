@@ -1,0 +1,10 @@
+BankAppEnv/
+target/
+models/test/
+models/bank.db
+models/bank.sql
+models/__pycache__/
+.classpath
+.settings
+.project
+.metadata
