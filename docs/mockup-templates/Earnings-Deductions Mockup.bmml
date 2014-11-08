@@ -1,0 +1,621 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1419" measuredH="1200" mockupW="1156" mockupH="1185">
+  <controls>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="263" y="15" w="1156" h="1185" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bank%20Webapp%0Ahttp%3A//localhost%3A8080/%23/app</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Canvas" x="266" y="88" w="1150" h="41" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Label" x="438" y="98" w="38" h="-1" measuredW="34" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Home%20Mockup%26bm%3BHome%20Mockup.bmml%26bm%3BHome%20Mockup.bmml%26bm%3BHome%20Mockup.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22175%2C83%2C213%2C104%22%20href%3D%22Home%2520Mockup.bmml%22%20alt%3D%22Home%20Mockup%22%20id%3D%2245%22/%3E</map>
+        <state>up</state>
+        <text>Home</text>
+        <textOrientation>right</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Label" x="516" y="98" w="122" h="-1" measuredW="103" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <text>Work%20Statements</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Label" x="679" y="98" w="80" h="-1" measuredW="71" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>MasterCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Label" x="818" y="98" w="116" h="-1" measuredW="103" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bank%20Statements</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Title" x="438" y="141" w="773" h="-1" measuredW="732" measuredH="43" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Statements%20of%20Earnings%20and%20Deductions</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::HRule" x="419" y="184" w="801" h="-1" measuredW="100" measuredH="10" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <stroke>solid</stroke>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1399" y="129" w="-1" h="1043" measuredW="16" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::SubTitle" x="419" y="199" w="-1" h="-1" measuredW="340" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Input%20Earnings%20and%20Deductions</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::TextInput" x="438" y="260" w="365" h="-1" measuredW="172" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Text%20Input%20Company%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Label" x="438" y="239" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Company</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::TextInput" x="842" y="260" w="358" h="-1" measuredW="106" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Text%20Input%20Rate</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Label" x="845" y="239" w="-1" h="-1" measuredW="28" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Rate</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::TextInput" x="438" y="311" w="365" h="-1" measuredW="161" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Text%20Input%20Payment%20Date</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Label" x="438" y="292" w="-1" h="-1" measuredW="83" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Payment%20Date</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::TextInput" x="842" y="311" w="358" h="-1" measuredW="113" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Text%20Input%20Hours</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Label" x="842" y="292" w="40" h="-1" measuredW="34" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hours</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Button" x="438" y="345" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::Button" x="516" y="345" w="-1" h="-1" measuredW="58" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <text>Reset</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::HRule" x="419" y="394" w="801" h="-1" measuredW="100" measuredH="10" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <stroke>solid</stroke>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Label" x="992" y="98" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Receipts</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::ComboBox" x="438" y="453" w="139" h="-1" measuredW="128" measuredH="24" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select%20Company</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::SubTitle" x="423" y="419" w="-1" h="-1" measuredW="439" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Statements%20of%20Earnings%20and%20Deductions</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Label" x="438" y="500" w="-1" h="-1" measuredW="98" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Payment%20Date%20n</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::Label" x="776" y="500" w="-1" h="-1" measuredW="97" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Company%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::Label" x="1106" y="500" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Net%20Pay</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="438" y="530" w="67" h="-1" measuredW="54" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Earnings</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::Label" x="438" y="551" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Regular</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Label" x="438" y="572" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Earnings</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Label" x="438" y="594" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Less%20Taxable%20Benefits</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Label" x="438" y="615" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Gross</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Label" x="438" y="651" w="75" h="-1" measuredW="70" measuredH="21" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Deductions</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Label" x="585" y="530" w="67" h="-1" measuredW="30" measuredH="21" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Rate</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Label" x="585" y="551" w="-1" h="-1" measuredW="83" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Rate%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="690" y="530" w="90" h="-1" measuredW="86" measuredH="21" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Hours%20Worked</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Label" x="690" y="551" w="-1" h="-1" measuredW="90" measuredH="21" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Hours%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Label" x="806" y="530" w="102" h="-1" measuredW="99" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Current%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Label" x="945" y="530" w="77" h="-1" measuredW="66" measuredH="21" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>YTD%20Hours</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="530" w="102" h="-1" measuredW="78" measuredH="21" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>YTD%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Label" x="806" y="551" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Label" x="945" y="551" w="-1" h="-1" measuredW="120" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Hours%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="551" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Label" x="806" y="572" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::Label" x="806" y="594" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Label" x="806" y="615" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="572" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="594" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="615" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Label" x="438" y="672" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Govt%20Pen</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Label" x="645" y="651" w="102" h="-1" measuredW="99" measuredH="21" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Current%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Label" x="945" y="651" w="102" h="-1" measuredW="78" measuredH="21" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>YTD%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::Label" x="438" y="693" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Feld%20Tax</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Label" x="438" y="714" w="-1" h="-1" measuredW="32" measuredH="21" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>QPIP</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Label" x="438" y="777" w="-1" h="-1" measuredW="100" measuredH="21" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Deductions</text>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Label" x="438" y="735" w="-1" h="-1" measuredW="45" measuredH="21" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>EI%20Cont</text>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::Label" x="438" y="756" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Prov%20Tax</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Label" x="645" y="672" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::Label" x="645" y="693" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="115" controlTypeID="com.balsamiq.mockups::Label" x="645" y="714" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::Label" x="645" y="735" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::Label" x="645" y="756" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::Label" x="645" y="777" w="-1" h="-1" measuredW="133" measuredH="21" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Total%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::Label" x="945" y="672" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::Label" x="945" y="693" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="121" controlTypeID="com.balsamiq.mockups::Label" x="945" y="714" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="122" controlTypeID="com.balsamiq.mockups::Label" x="945" y="735" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="123" controlTypeID="com.balsamiq.mockups::Label" x="945" y="756" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="124" controlTypeID="com.balsamiq.mockups::Label" x="945" y="777" w="-1" h="-1" measuredW="164" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Total%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="125" controlTypeID="com.balsamiq.mockups::Label" x="438" y="813" w="-1" h="-1" measuredW="116" measuredH="21" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Payment%20Date%20n%20-%201</text>
+      </controlProperties>
+    </control>
+    <control controlID="126" controlTypeID="com.balsamiq.mockups::Label" x="776" y="813" w="-1" h="-1" measuredW="97" measuredH="21" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Company%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="127" controlTypeID="com.balsamiq.mockups::Label" x="1106" y="813" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Net%20Pay</text>
+      </controlProperties>
+    </control>
+    <control controlID="128" controlTypeID="com.balsamiq.mockups::Label" x="438" y="843" w="67" h="-1" measuredW="54" measuredH="21" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Earnings</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="129" controlTypeID="com.balsamiq.mockups::Label" x="438" y="864" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Regular</text>
+      </controlProperties>
+    </control>
+    <control controlID="130" controlTypeID="com.balsamiq.mockups::Label" x="438" y="885" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Earnings</text>
+      </controlProperties>
+    </control>
+    <control controlID="131" controlTypeID="com.balsamiq.mockups::Label" x="438" y="907" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Less%20Taxable%20Benefits</text>
+      </controlProperties>
+    </control>
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::Label" x="438" y="928" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Gross</text>
+      </controlProperties>
+    </control>
+    <control controlID="133" controlTypeID="com.balsamiq.mockups::Label" x="438" y="964" w="75" h="-1" measuredW="70" measuredH="21" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Deductions</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="134" controlTypeID="com.balsamiq.mockups::Label" x="585" y="843" w="67" h="-1" measuredW="30" measuredH="21" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Rate</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="135" controlTypeID="com.balsamiq.mockups::Label" x="585" y="864" w="-1" h="-1" measuredW="83" measuredH="21" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Rate%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="136" controlTypeID="com.balsamiq.mockups::Label" x="690" y="843" w="90" h="-1" measuredW="86" measuredH="21" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Hours%20Worked</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="137" controlTypeID="com.balsamiq.mockups::Label" x="690" y="864" w="-1" h="-1" measuredW="90" measuredH="21" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Hours%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="138" controlTypeID="com.balsamiq.mockups::Label" x="806" y="843" w="102" h="-1" measuredW="99" measuredH="21" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Current%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="139" controlTypeID="com.balsamiq.mockups::Label" x="945" y="843" w="77" h="-1" measuredW="66" measuredH="21" zOrder="83" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>YTD%20Hours</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="140" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="843" w="102" h="-1" measuredW="78" measuredH="21" zOrder="84" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>YTD%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="141" controlTypeID="com.balsamiq.mockups::Label" x="806" y="864" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="85" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="142" controlTypeID="com.balsamiq.mockups::Label" x="945" y="864" w="-1" h="-1" measuredW="120" measuredH="21" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Hours%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="143" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="864" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="87" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="144" controlTypeID="com.balsamiq.mockups::Label" x="806" y="885" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="88" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="145" controlTypeID="com.balsamiq.mockups::Label" x="806" y="907" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="146" controlTypeID="com.balsamiq.mockups::Label" x="806" y="928" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="147" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="885" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="148" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="907" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="149" controlTypeID="com.balsamiq.mockups::Label" x="1091" y="928" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="93" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="150" controlTypeID="com.balsamiq.mockups::Label" x="438" y="985" w="-1" h="-1" measuredW="54" measuredH="21" zOrder="94" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Govt%20Pen</text>
+      </controlProperties>
+    </control>
+    <control controlID="151" controlTypeID="com.balsamiq.mockups::Label" x="645" y="964" w="102" h="-1" measuredW="99" measuredH="21" zOrder="95" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Current%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="152" controlTypeID="com.balsamiq.mockups::Label" x="945" y="964" w="102" h="-1" measuredW="78" measuredH="21" zOrder="96" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>YTD%20Amount</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="153" controlTypeID="com.balsamiq.mockups::Label" x="438" y="1006" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="97" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Feld%20Tax</text>
+      </controlProperties>
+    </control>
+    <control controlID="154" controlTypeID="com.balsamiq.mockups::Label" x="438" y="1027" w="-1" h="-1" measuredW="32" measuredH="21" zOrder="98" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>QPIP</text>
+      </controlProperties>
+    </control>
+    <control controlID="155" controlTypeID="com.balsamiq.mockups::Label" x="438" y="1090" w="-1" h="-1" measuredW="100" measuredH="21" zOrder="99" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Total%20Deductions</text>
+      </controlProperties>
+    </control>
+    <control controlID="156" controlTypeID="com.balsamiq.mockups::Label" x="438" y="1048" w="-1" h="-1" measuredW="45" measuredH="21" zOrder="100" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>EI%20Cont</text>
+      </controlProperties>
+    </control>
+    <control controlID="157" controlTypeID="com.balsamiq.mockups::Label" x="438" y="1069" w="-1" h="-1" measuredW="52" measuredH="21" zOrder="101" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Prov%20Tax</text>
+      </controlProperties>
+    </control>
+    <control controlID="158" controlTypeID="com.balsamiq.mockups::Label" x="645" y="985" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="102" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="159" controlTypeID="com.balsamiq.mockups::Label" x="645" y="1006" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="103" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="160" controlTypeID="com.balsamiq.mockups::Label" x="645" y="1027" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="104" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="161" controlTypeID="com.balsamiq.mockups::Label" x="645" y="1048" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="105" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="162" controlTypeID="com.balsamiq.mockups::Label" x="645" y="1069" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="106" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="163" controlTypeID="com.balsamiq.mockups::Label" x="645" y="1090" w="-1" h="-1" measuredW="133" measuredH="21" zOrder="107" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Total%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="164" controlTypeID="com.balsamiq.mockups::Label" x="945" y="985" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="108" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="165" controlTypeID="com.balsamiq.mockups::Label" x="945" y="1006" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="109" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="166" controlTypeID="com.balsamiq.mockups::Label" x="945" y="1027" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="110" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="167" controlTypeID="com.balsamiq.mockups::Label" x="945" y="1048" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="111" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="168" controlTypeID="com.balsamiq.mockups::Label" x="945" y="1069" w="-1" h="-1" measuredW="131" measuredH="21" zOrder="112" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+    <control controlID="169" controlTypeID="com.balsamiq.mockups::Label" x="945" y="1090" w="-1" h="-1" measuredW="164" measuredH="21" zOrder="113" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%3CSome%20Total%20YTD%20Amount%3E</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

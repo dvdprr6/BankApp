@@ -1,0 +1,56 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1456" measuredH="1121" mockupW="1156" mockupH="1096">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="300" y="25" w="1156" h="1096" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bank%20Webapp%0Ahttp%3A//localhost%3A8080/%23/app</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="303" y="98" w="1150" h="41" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="475" y="108" w="38" h="-1" measuredW="34" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>up</state>
+        <text>Home</text>
+        <textOrientation>right</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="553" y="108" w="122" h="-1" measuredW="103" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <href>Earnings-Deductions%20Mockup%26bm%3BEarnings-Deductions%20Mockup.bmml%26bm%3BEarnings-Deductions%20Mockup.bmml%26bm%3BEarnings-Deductions%20Mockup.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22253%2C83%2C375%2C104%22%20href%3D%22Earnings-Deductions%2520Mockup.bmml%22%20alt%3D%22Earnings-Deductions%20Mockup%22%20id%3D%223%22/%3E</map>
+        <text>Work%20Statements</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="716" y="108" w="80" h="-1" measuredW="71" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>MasterCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="855" y="108" w="116" h="-1" measuredW="103" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bank%20Statements</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Title" x="475" y="151" w="773" h="-1" measuredW="195" measuredH="43" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dashboard</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::HRule" x="456" y="194" w="801" h="-1" measuredW="100" measuredH="10" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <stroke>solid</stroke>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1436" y="139" w="-1" h="954" measuredW="16" measuredH="100" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="1029" y="108" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Receipts</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
