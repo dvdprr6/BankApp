@@ -18,7 +18,7 @@ public class ConfigFile{
 			io.printStackTrace();
 		}
 		
-		String[] lines = fileAsString.split("/n");
+		String[] lines = fileAsString.split("\n");
 		
 		for(String currentLine : lines){
 			addKeyToHashMap(currentLine.trim());
