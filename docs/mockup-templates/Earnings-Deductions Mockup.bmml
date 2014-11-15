@@ -617,5 +617,10 @@
         <text>%3CSome%20Total%20YTD%20Amount%3E</text>
       </controlProperties>
     </control>
+    <control controlID="170" controlTypeID="com.balsamiq.mockups::ComboBox" x="598" y="453" w="139" h="-1" measuredW="100" measuredH="24" zOrder="114" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Select%20Year</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>
