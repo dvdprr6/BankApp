@@ -9,3 +9,4 @@ models/__pycache__/
 .project
 .metadata
 README.md~
+www/app/bower_components
