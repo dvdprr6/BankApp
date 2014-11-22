@@ -1,5 +1,6 @@
 BankAppEnv/
 target/
+www/app/bower_components/
 models/bank.db
 models/bank.sql
 models/__pycache__/
