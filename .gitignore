@@ -4,6 +4,7 @@ www/app/bower_components/
 models/bank.db
 models/bank.sql
 models/__pycache__/
+logs/
 .classpath
 .settings
 .project
