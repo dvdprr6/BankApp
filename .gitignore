@@ -13,3 +13,4 @@ README.md~
 database/Database.egg-info/
 database/build/
 database/dist/
+database/conf/
