@@ -14,7 +14,7 @@ Base = declarative_base()
 
 class GeneralStatementInfo(Base):
 
-	__tablename__ = 'general_statement_info'
+	__tablename__ = 'general_statement_information'
 
 	id = Column(Integer, primary_key=True, nullable=False)
 	rate = Column(Float, nullable=False)
@@ -35,12 +35,12 @@ class GeneralStatementInfo(Base):
 
 class EarningsAssociation(Base):
 
-	__tablename__ = 'earnings_association'
+	__tablename__ = 'earnings_associations'
 
 	id = Column(Integer, primary_key=True, nullable=False)
-	earnings_ytd_id = Column(Integer, ForeignKey('ytd_earnings.id', ondelete="CASCADE"),
+	earnings_ytd_id = Column(Integer, ForeignKey('ytd_earnings.id', ondelete="CASCADE", name='fk_earnings_ytd_id'),
 							 primary_key=True, nullable=False)
-	earnings_id = Column(Integer, ForeignKey('earnings.id', ondelete="CASCADE"),
+	earnings_id = Column(Integer, ForeignKey('earnings.id', ondelete="CASCADE", name='fk_earnings_id'),
 						 primary_key=True, nullable=False)
 
 	ytd_earnings = relationship('YTDEarnings')
@@ -92,14 +92,14 @@ class Earnings(Base):
 
 class EarningsDeductionsAssociation(Base):
 
-	__tablename__ = 'earnings_deductions_association'
+	__tablename__ = 'earnings_deductions_associations'
 
 	# id = Column(Integer, primary_key=True, nullable=False)
-	earnings_association_id = Column(Integer, ForeignKey('earnings_association.id', ondelete="CASCADE"),
+	earnings_association_id = Column(Integer, ForeignKey('earnings_association.id', ondelete="CASCADE", name='fk_earnings_association_id'),
 									 primary_key=True, nullable=False)
-	deductions_association_id = Column(Integer, ForeignKey('deductions_association.id', ondelete="CASCADE"), 
+	deductions_association_id = Column(Integer, ForeignKey('deductions_association.id', ondelete="CASCADE", name='fk_deductions_association_id'), 
 										primary_key=True, nullable=False)
-	general_statement_info_id = Column(Integer, ForeignKey('general_statement_info.id', ondelete="CASCADE"), 
+	general_statement_info_id = Column(Integer, ForeignKey('general_statement_info.id', ondelete="CASCADE", name='fk_general_statement_info_id'), 
 										primary_key=True, nullable=False)
 
 	earnings_association = relationship('EarningsAssociation')
@@ -109,12 +109,12 @@ class EarningsDeductionsAssociation(Base):
 
 class DeductionsAssociation(Base):
 
-	__tablename__ = 'deductions_association'
+	__tablename__ = 'deductions_associations'
 
 	id = Column(Integer, primary_key=True, nullable=False)
-	deductions_ytd_id = Column(Integer, ForeignKey('ytd_deductions.id', ondelete="CASCADE"),
+	deductions_ytd_id = Column(Integer, ForeignKey('ytd_deductions.id', ondelete="CASCADE", name='deductions_ytd_id'),
 								primary_key=True, nullable=False)
-	deductions_id = Column(Integer, ForeignKey('deductions.id', ondelete="CASCADE"),
+	deductions_id = Column(Integer, ForeignKey('deductions.id', ondelete="CASCADE", name='deductions_id'),
 							primary_key=True, nullable=False)
 
 	ytd_deductions = relationship('YTDDeductions')
