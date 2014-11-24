@@ -9,13 +9,16 @@ config = context.config
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
-fileConfig(config.config_file_name)
+#fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+#target_metadata = None
+
+from bank.db.models import Base
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
@@ -49,10 +52,15 @@ def run_migrations_online():
     and associate a connection with the context.
 
     """
-    engine = engine_from_config(
-        config.get_section(config.config_ini_section),
-        prefix='sqlalchemy.',
-        poolclass=pool.NullPool)
+    # engine = engine_from_config(
+    #     config.get_section(config.config_ini_section),
+    #     prefix='sqlalchemy.',
+    #     poolclass=pool.NullPool)
+
+    engine = engine_from_config({
+        'sqlalchemy.url': config.get_section_option('sqlalchemy', 'url'),
+        'sqlalchemy.echo': config.get_section_option('sqlalchemy', 'echo')
+    })
 
     connection = engine.connect()
     context.configure(
