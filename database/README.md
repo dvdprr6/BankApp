@@ -1,7 +1,7 @@
 Python structure
 
-*database/
-**bank/
+* database/
+** bank/
 
 database/ \"\n\"
 	\tbank/
