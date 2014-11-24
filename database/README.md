@@ -1,12 +1,12 @@
 Python structure
 
 
-database/
-	bank/
-		db/
-			__init__.py
-			models.py
-		__init__.py
+database/ \n
+	\tbank/
+		\t\tdb/\n
+			\t\t\t__init__.py\n
+			\tmodels.py\n
+		__init__.py\n
 	conf/
 		dev/
 			bank.conf
