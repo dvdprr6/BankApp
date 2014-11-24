@@ -1,7 +1,7 @@
 Python structure
 
 
-database/ "\n"
+database/ \"\n\"
 	\tbank/
 		\t\tdb/\n
 			\t\t\t__init__.py\n
