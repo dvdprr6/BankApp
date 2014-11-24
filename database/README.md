@@ -1,6 +1,6 @@
 Python structure
 
-`
+
 database/
 	bank/
 		db/
@@ -16,4 +16,4 @@ database/
 		__init__.py
 	README.dm
 	setup.py
-`
+
