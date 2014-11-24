@@ -1,1 +1,11 @@
 Generic single-database configuration.
+
+* Current version: `alembic -c conf/dev/bank.conf current`
+* Autogen a revision: `alembic -c conf/dev/bank.conf revision --autogenerate -m "some message"`
+* History: `alembic -c conf/dev/bank.conf history`
+
+High level workflow:
+
+INIT:
+
+`alembic -c conf/dev/bank.conf upgrade head` which will add an `alembic_version` table with the number
