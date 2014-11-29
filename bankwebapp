@@ -1,0 +1,67 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+prog="bankwebapp"
+
+pidfile=/var/run/bankwebapp.pid
+
+start(){
+	echo -n $"Starting $prog: "
+	daemon /home/david/projects/BankApp/BankEnv/bin/bankwebapp -- config=/home/david/projects/BankApp/server/conf/dev/bank.conf &>> /home/david/projects/BankApp/output.log 2>>/home/david/projects/BankApp/server/server.log &
+	retval=$?
+
+	if [ 0 -eq $retval ] ; then
+		echo "OK."
+	else
+		echo "ERROR."
+	fi
+
+	return $retval
+}
+
+stop(){
+	echo -n $"Stopping $prog: "
+	retval=0
+
+	appid=$(ps aux | grep '/home/david/projects/BankApp/BankEnv/bin/bankwebapp' | grep -v grep | awk '{print $2}')
+	if [ -n "$appid" ] ; then
+		sudo kill $appid
+		echo "OK."
+		retval=$?
+	else
+		echo "server is not running"
+		retval=1
+	fi
+
+	return $retval
+}
+
+restart(){
+	stop
+	start
+}
+
+rh_status(){
+	status $prog
+	retval=$?
+	return $retval
+}
+
+case "$1" in
+	start)
+		$1
+		;;
+	stop)
+		$1
+		;;
+	status)
+		rh_status
+		;;
+	restart)
+		$1
+		;;
+	*)
+	echo $"Usage: $0 {start|stop|status|restart}"
+	exit 2
+esac

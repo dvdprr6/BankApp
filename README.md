@@ -1,18 +1,14 @@
+##Puppet Provisioning##
+In order to provision the database, these packages are needed
+1. puppetlabs-postgres-4.1.0
+2. puppetlabs-stdlib-4.4.0
+3. puppetlabs-apt-1.7.0
+4. puppetlabs-concat-1.1.2
 
+You can get these using `wget` as such:
+`wget http://forge.puppetlabs.com/system/releases/p/puppetlabs/puppetlabs-postgresql-4.1.0.tar.gz`
+`wget http://forge.puppetlabs.com/system/releases/p/puppetlabs/puppetlabs-stdlib-4.4.0.tar.gz`
+`wget http://forge.puppetlabs.com/system/releases/p/puppetlabs/puppetlabs-apt-1.7.0.tar.gz`
+`wget http://forge.puppetlabs.com/system/releases/p/puppetlabs/puppetlabs-concat-1.1.2.tar.gz`
 
-
-##Python Requirements
-1. Python version 3.0 or higher
-2. Setuptools 7.0
-
-##Python Installation and Environment setup
-
-1. First download the latest python distribution here: https://www.python.org/downloads/
-2. untar the .xz package `tar -xJf Python.3.x.x.tar.xz`
-3. Enter the Python.3.x.x directory and run `./configure --prefix=/opt/python3.x`
-4. To install the binaries run the makefile `make && sudo make install`Now setup up the python environment, so the dependencies can be properly managed
-5. Create the python virtualenv `/opt/python3.x/bin/python3.x -m venv /home/david/projects/BankApp/BankAppEnv`
-6. Now install the setuptools. Download here: https://pypi.python.org/pypi/setuptools. To install the tools run `/home/david/projects/BankApp/BankAppEnv/bin/python setup.py install`
-7. To install the requirements, first pip needs to be installed `/home/david/projects/BankApp/BankAppEnv/bin/easy_install pip` Now install the requirements `/home/david/projects/BankApp/BankAppEnv/bin/pip install -r requirements.txt`
-
-
+Untar each of these packages and copy them to puppet/modules/ with the names `postgresql`, `stdlib`, `apt`, and `concat`, respectively. This naming convention is important so each packages can find each others classes.

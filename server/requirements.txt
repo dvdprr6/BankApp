@@ -1,1 +1,5 @@
+SQLAlchemy
+alembic
+pymysql
+psycopg2
 tornado

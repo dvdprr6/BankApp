@@ -35,8 +35,10 @@ def main():
 		sys.exit(1)
 
 	'''INIT SERVER'''
+	main_loop = tornado.ioloop.IOLoop.instance()
 	application.listen(config.getint('bankwebapp','port'))
-	tornado.ioloop.IOLoop.instance().start()
+	logging.getLogger('webserver').info('<!> bank webapp initialized')
+	main_loop.start()
 
 if __name__ == "__main__":
 	main()
