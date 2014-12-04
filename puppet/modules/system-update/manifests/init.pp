@@ -9,6 +9,7 @@ class system-update{
 	}
 	$sysPackages = [
 		"curl",
+		"wget",
 		"openssl-devel",
 		"nodejs",
 		"nodejs-devel",

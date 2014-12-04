@@ -1,3 +1,8 @@
+#
+# Setup the dev environment
+#
+
+
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
 class bankwebapp{
@@ -6,19 +11,16 @@ class bankwebapp{
 		target => '/vagrant/bankwebapp',
 		owner => root,
 		mode => '755'
-	} ->
+	}->
 	file{"/etc/bank/":
 		ensure => 'directory'
-	} ->
-	file{"/home/vagrant/Python-3.3.5.tar.xz":
-		ensure => 'file',
-		source => 'file:///mnt/python/Python-3.3.5.tar.xz',
-		owner => vagrant
-	} ->
-	file{"/home/vagrant/setuptools-7.0.tar.gz":
-		ensure => 'file',
-		source => 'file:///mnt/python/setuptools-7.0.tar.gz',
-		owner => vagrant
+	}->
+	exec{"download-python3":
+		command => 'wget -q http://www.python.org/ftp/python/3.3.5/Python-3.3.5.tar.xz --no-check-certificate',
+		cwd => '/home/vagrant/',
+		creates => '/home/vagrant/Python-3.3.5.tar.xz',
+		user => vagrant,
+		timeout => 0
 	}
 }
 

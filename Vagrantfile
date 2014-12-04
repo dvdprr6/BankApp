@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puphpet/centos65-x64"
   config.vm.network :forwarded_port, guest: 8888, host: 8888
   config.vm.synced_folder "./", "/vagrant"
-  config.vm.synced_folder "/home/david/tools/Python/", "/mnt/python/"
+  # config.vm.synced_folder "/home/david/tools/Python/", "/mnt/python/"
   
   if Vagrant.has_plugin?("vagrant-cachier")  
     config.cache.scope = :box  
@@ -35,6 +35,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file = "database.pp"
+    puppet.module_path = "puppet/modules"
+  end
+
+  #
+  # webserver setup
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file = "setup_webserver.pp"
     puppet.module_path = "puppet/modules"
   end
   

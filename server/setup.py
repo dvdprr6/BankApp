@@ -5,7 +5,8 @@ version = '0.0.1'
 install_requires = [
 	'SQLAlchemy==0.9.4',
 	'alembic',
-	'pymysql'
+	'psycopg2',
+	'colour-runner'
 ]
 
 setup(name='Bank',

@@ -8,12 +8,12 @@ class python3{
 		cwd => '/home/vagrant',
 		creates => '/home/vagrant/Python-3.3.5',
 		user => vagrant
-	} ->
+	}->
 	exec{"configure-python":
 		command => 'sh configure --prefix=/opt/python3.3',
 		cwd => '/home/vagrant/Python-3.3.5',
 		user => vagrant
-	} ->
+	}->
 	exec{"install-python":
 		command => 'make && make install',
 		cwd => '/home/vagrant/Python-3.3.5',

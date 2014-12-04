@@ -5,7 +5,7 @@ server/server.log
 output.log
 puppet/modules/apt/
 puppet/modules/concat/
-puppet/modules/postgres/
+puppet/modules/postgresql/
 puppet/modules/stdlib/
 README.md~
 .vagrant

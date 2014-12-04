@@ -1,5 +1,5 @@
-SQLAlchemy
+SQLAlchemy==0.9.4
 alembic
-pymysql
 psycopg2
 tornado
+colour-runner
