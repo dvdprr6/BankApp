@@ -6,6 +6,11 @@ import configparser
 from sqlalchemy import create_engine
 from bank.db.models import Base
 
+'''
+To get the .db for sqlite
+python scripts/initdb.py --config=conf/test/bank.conf
+'''
+
 def parse_config(config_file):
 	config = configparser.RawConfigParser()
 	config.read(config_file)
