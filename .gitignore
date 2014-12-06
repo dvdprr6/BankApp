@@ -1,5 +1,6 @@
 BankEnv/
 server/bank.db
+server/bank.sql
 server/Bank.egg-info/
 server/server.log
 output.log

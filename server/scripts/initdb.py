@@ -4,6 +4,7 @@ import logging
 import argparse
 import configparser
 from sqlalchemy import create_engine
+
 from bank.db.models import Base
 
 '''
@@ -16,7 +17,7 @@ def parse_config(config_file):
 	config.read(config_file)
 	return config
 
-def createDatabase(config):
+def initialize_database(config):
 	db_url = config.get('sqlalchemy','url')
 	db_echo = config.getboolean('sqlalchemy', 'echo')
 	DbEngine = create_engine(db_url, echo=db_echo)
@@ -30,7 +31,7 @@ def main(argv=sys.argv):
 		parser.print_help()
 		sys.exit(1)
 	config = parse_config(args.config)
-	createDatabase(config)
+	initialize_database(config)
 
 if __name__ == '__main__':
 	main()
