@@ -6,10 +6,11 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "puphpet/centos65-x64"
+  config.vm.box = "oel65-64"
+  config.vm.hostname = "bank-dev"
   config.vm.network :forwarded_port, guest: 8888, host: 8888
   config.vm.synced_folder "./", "/vagrant"
-  # config.vm.synced_folder "/home/david/tools/Python/", "/mnt/python/"
+  config.ssh.forward_agent = true
   
   if Vagrant.has_plugin?("vagrant-cachier")  
     config.cache.scope = :box  

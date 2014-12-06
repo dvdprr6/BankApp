@@ -38,6 +38,10 @@ class bank_webapp_scaffold{
 		user => vagrant,
 		timeout => 0
 	}->
+	file{"/etc/bank/bank.conf":
+		ensure => "file",
+		source => "file:///vagrant/server/conf/dev/bank.conf"
+	}->
 	exec{"python-at-startup":
 		command => 'echo ". /home/vagrant/bankEnv/bin/activate" >> /home/vagrant/.bashrc',
 		cwd => '/home/vagrant/',

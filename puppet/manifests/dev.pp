@@ -4,11 +4,12 @@
 
 
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
+#Exec { path => ["/usr/local/bin", "/bin/", "/usr/bin", "/usr/local/sbin", "/usr/sbin", "/sbin/", "/home/vagrant/bin"]}
 
 class bankwebapp{
 	file{"/etc/rc.d/init.d/bankwebapp":
 		ensure => 'link',
-		target => '/vagrant/bankwebapp',
+		target => '/vagrant/server/conf/bankwebapp',
 		owner => root,
 		mode => '755'
 	}->

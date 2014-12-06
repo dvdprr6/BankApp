@@ -10,6 +10,7 @@ class system-update{
 	$sysPackages = [
 		"curl",
 		"wget",
+		"vim",
 		"openssl-devel",
 		"nodejs",
 		"nodejs-devel",

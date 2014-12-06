@@ -4,9 +4,19 @@
 
 prog="bankwebapp"
 
+pidfile=/var/run/bankwebapp.pid
+
+UserDirectory=/home/vagrant
+MainDirectory=/vagrant
+ConfigDirectory=/etc/bank/bank.conf
+
+exec=$UserDirectory/bankEnv/bin/bankwebapp
+export PYTHON_HOME=$UserDirectory/bankEnv
+
 start(){
+	cd $MainDirectory/server
 	echo -n $"Starting $prog: "
-	daemon /home/vagrant/BankEnv/bin/bankwebapp -- config=/home/david/projects/BankApp/server/conf/dev/bank.conf &>> /home/david/projects/BankApp/output.log 2>>/home/david/projects/BankApp/server/server.log &
+	daemon $UserDirectory/bankEnv/bin/bankwebapp --config=$ConfigDirectory &>> $MainDirectory/output.log 2>>$MainDirectory/server/server.log &
 	retval=$?
 
 	if [ 0 -eq $retval ] ; then
@@ -22,7 +32,8 @@ stop(){
 	echo -n $"Stopping $prog: "
 	retval=0
 
-	appid=$(ps aux | grep '/home/vagrant/BankEnv/bin/bankwebapp' | grep -v grep | awk '{print $2}')
+	appid=$(ps aux | grep "$UserDirectory/bankEnv/bin/bankwebapp" | grep -v grep | awk '{print $2}')
+
 	if [ -n "$appid" ] ; then
 		sudo kill $appid
 		echo "OK."
@@ -60,6 +71,6 @@ case "$1" in
 		$1
 		;;
 	*)
-	echo $"Usage: $0 {start|stop|status|restart}"
-	exit 2
+		echo $"Usage: $0 {start|stop|status|restart}"
+		exit 2
 esac
