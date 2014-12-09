@@ -1,0 +1,19 @@
+Generic single-database configuration.
+
+* Current version: `alembic -c /etc/bank/bank.conf current`
+* Autogen a revision: `alembic -c /etc/bank/bank.conf revision --autogenerate -m "some message"`
+* History: `alembic -c /etc/bank/bank.conf history`
+
+INIT:
+
+`alembic -c /etc/bank/bank.conf upgrade head` which will add an `alembic_version` table with the number
+
+THEN..
+
+Step 1: Update the models in the db module
+Step 2: Autogenerate the version upgrade (see above) & validate it
+Step 3: Upgrade the database: `alembic -c /etc/bank/bank.conf upgrade`
+Step 4: Commit
+
+First-time Deploy:
+`alembic -c /etc/bank/bank.conf upgrade head --sql > migrate.sql`

@@ -2,7 +2,7 @@
 # setup the webserver
 #
 
-class bank_webapp_scaffold{
+class setup_bank_webapp{
 	$bank_path = '/usr/local/bin/:/usr/local/:/usr/bin/:/bin/:/opt/python3.3/bin'
 	exec{"python-env":
 		command => '/opt/python3.3/bin/python3.3 -m venv /home/vagrant/bankEnv',
@@ -42,6 +42,12 @@ class bank_webapp_scaffold{
 		ensure => "file",
 		source => "file:///vagrant/server/conf/dev/bank.conf"
 	}->
+	exec{"init-database":
+		command => '/home/vagrant/bankEnv/bin/python scripts/initdb.py --config=/etc/bank/bank.conf',
+		cwd => '/vagrant/server',
+		path => $bank_path,
+		user => vagrant
+	}->
 	exec{"python-at-startup":
 		command => 'echo ". /home/vagrant/bankEnv/bin/activate" >> /home/vagrant/.bashrc',
 		cwd => '/home/vagrant/',
@@ -50,4 +56,4 @@ class bank_webapp_scaffold{
 	}
 }
 
-include bank_webapp_scaffold
+include setup_bank_webapp

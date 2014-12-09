@@ -6,7 +6,7 @@ install_requires = [
 	'SQLAlchemy==0.9.4',
 	'alembic==0.7.1',
 	'psycopg2==2.5.4',
-	'tornado==4.0.2'
+	'tornado==4.0.2',
 	'colour-runner'
 ]
 

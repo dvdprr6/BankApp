@@ -20,8 +20,7 @@ class GeneralStatementInfo(Base):
 	company_name = Column(String(255))
 	payment_date = Column(DateTime, default=datetime.datetime.utcnow)
 
-	earnings_deductions_association = relationship("EarningsDeductionsAssociation",
-										  cascade="save-update, merge, delete, delete-orphan")
+	earnings_deductions_association = relationship("EarningsDeductionsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 
 	def to_dict(self):
@@ -37,9 +36,9 @@ class EarningsDeductionsAssociation(Base):
 
 	__tablename__ = 'earnings_deductions_associations'
 
-	earnings_association_id = Column(Integer, ForeignKey('earnings_associations.id'), primary_key=True, nullable=False)
-	deductions_association_id = Column(Integer, ForeignKey('deductions_associations.id'), primary_key=True, nullable=False)
-	general_statement_info_id = Column(Integer, ForeignKey('general_statement_information.id'), primary_key=True, nullable=False)
+	earnings_association_id = Column(Integer, ForeignKey('earnings_associations.id'), primary_key=True)
+	deductions_association_id = Column(Integer, ForeignKey('deductions_associations.id'), primary_key=True)
+	general_statement_info_id = Column(Integer, ForeignKey('general_statement_information.id'), primary_key=True)
 
 	general_statement_information = relationship("GeneralStatementInfo")
 	deductions_association = relationship("DeductionsAssociation")
@@ -58,11 +57,10 @@ class DeductionsAssociation(Base):
 	__tablename__ = 'deductions_associations'
 
 	id = Column(Integer, primary_key=True, nullable=False)
-	deductions_ytd_id = Column(Integer, ForeignKey('ytd_deductions.id'), primary_key=True, nullable=False)
-	deductions_id = Column(Integer, ForeignKey('deductions.id'), primary_key=True, nullable=False)
+	deductions_ytd_id = Column(Integer, ForeignKey('ytd_deductions.id'))
+	deductions_id = Column(Integer, ForeignKey('deductions.id'))
 
-	earnings_deductions_association = relationship("EarningsDeductionsAssociation",
-										  cascade="save-update, merge, delete, delete-orphan")
+	earnings_deductions_association = relationship("EarningsDeductionsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 	ytd_deductions = relationship("YTDDeductions")
 	deductions = relationship("Deductions")
@@ -86,8 +84,7 @@ class YTDDeductions(Base):
 	ei_contribution = Column(Float, nullable=False)
 	provencial_tax = Column(Float, nullable=False)
 
-	deductions_association = relationship("DeductionsAssociation",
-										  cascade="save-update, merge, delete, delete-orphan")
+	deductions_association = relationship("DeductionsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 	def to_dict(self):
 		return{
@@ -110,8 +107,7 @@ class Deductions(Base):
 	ei_contribution = Column(Float, nullable=False)
 	provencial_tax = Column(Float, nullable=False)
 
-	deductions_association = relationship("DeductionsAssociation",
-										  cascade="save-update, merge, delete, delete-orphan")
+	deductions_association = relationship("DeductionsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 	def to_dict(self):
 		return{
@@ -128,11 +124,10 @@ class EarningsAssociation(Base):
 	__tablename__ = 'earnings_associations'
 
 	id = Column(Integer, primary_key=True, nullable=False)
-	earnings_ytd_id = Column(Integer, ForeignKey('ytd_earnings.id'), primary_key=True, nullable=False)
-	earnings_id = Column(Integer, ForeignKey('earnings.id'), primary_key=True, nullable=False)
+	earnings_ytd_id = Column(Integer, ForeignKey('ytd_earnings.id'))
+	earnings_id = Column(Integer, ForeignKey('earnings.id'))
 
-	earnings_deductions_association = relationship("EarningsDeductionsAssociation",
-										  cascade="save-update, merge, delete, delete-orphan")
+	earnings_deductions_association = relationship("EarningsDeductionsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 
 	ytd_earnings = relationship("YTDEarnings")
@@ -153,8 +148,7 @@ class YTDEarnings(Base):
 	hours = Column(Float, nullable=False)
 	amount = Column(Float, nullable=False)
 
-	earnings_association = relationship("EarningsAssociation",
-										cascade="save-update, merge, delete, delete-orphan")
+	earnings_association = relationship("EarningsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 	def to_dict(self):
 		return{
@@ -172,8 +166,7 @@ class Earnings(Base):
 	less_taxable_benefits = Column(Float, nullable=False)
 	total_gross = Column(Float, nullable=False)
 
-	earnings_association = relationship("EarningsAssociation",
-										cascade="save-update, merge, delete, delete-orphan")
+	earnings_association = relationship("EarningsAssociation", cascade="save-update, merge, delete, delete-orphan")
 
 	def to_dict(self):
 		return{
