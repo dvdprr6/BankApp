@@ -1,57 +1,50 @@
 import sys
 import os
+import base64
+import uuid
 import json
 import argparse
 import configparser
 import logging
 import logging.config
 
+from sqlalchemy import engine_from_config
+from sqlalchemy.orm import scoped_session, sessionmaker
+
 import tornado.ioloop
 import tornado.web
+
+from .handlers import work_statement_api as work_statement_handlers
 
 def parse_config(config_file):
 	config = configparser.RawConfigParser()
 	config.read(config_file)
 	return config
 
-class MainHandler(tornado.web.RequestHandler):
-	@tornado.web.asynchronous
-	def get(self):
-		self.set_status(200)
-		self.write("hello, world")
-		self.finish()
 
-# class WebApplication(tornado.web.Application):
+class WebApplication(tornado.web.Application):
 	
-# 	def __init__(self, config, main_loop=None):
+	def __init__(self, config, main_loop=None):
 
-# 		# self.we_clients = WebSocketClients()
-# 		# self.ws_listener = WebSocketListener(app=self, clients=self.ws_clients)
+		self.db = scoped_session(sessionmaker(bind=engine_from_config({
+				'sqlalchemy.url': config.get('sqlalchemy', 'url'),
+				'sqlalchemy.echo': config.getboolean('sqlalchemy', 'echo')
+			})))
+		
+		root = os.path.dirname(__file__)
+		
+		settings = {
+			'debug': True,
+			'cookie_secret': str(base64.b64encode(uuid.uuid4().bytes + uuid.uuid4().bytes))
+		}
 
-# 		# websocket_references = {}
-# 		# websocket_references['clients'] = self.ws_clients
-# 		# websocket_references['listener'] = self.ws_listener
-# 		root = os.path.dirname(__file__)
-# 		settings = {
-# 			'template_path': root,
-# 			'debug': True if config.getint('bankwebapp','debug') == 1 else False,
-# 			'gzip': True if config.getint('bankwebapp','gzip') == 1 else False,
-# 			# 'xsrf_cookies': True,
-# 			'login_url': '/',
-# 			'cookie_secret': 'Y2FmNTRiN2ItODM4NS00ODFiLWIzODAtNTNmMDViYWE3M2M3'
-# 		}
+		self.config = config
 
-# 		self.config = config
+		handlers = []
+		#handlers.append((r'/', MainHandler))
+		handlers += work_statement_handlers 
 
-# 		handlers = []
-# 		handlers.append((r'/', MainHandler))
-
-# 		tornado.web.Application.__init__(self, handlers, **settings)
-
-
-application = tornado.web.Application([
-	(r'/?', MainHandler)
-])
+		tornado.web.Application.__init__(self, handlers, **settings)
 
 def main():
 	parser = argparse.ArgumentParser(description="Bank webapp init")
@@ -70,7 +63,7 @@ def main():
 
 	'''INIT SERVER'''
 	main_loop = tornado.ioloop.IOLoop.instance()
-	#application = WebApplication(config=config, main_loop=main_loop)
+	application = WebApplication(config=config, main_loop=main_loop)
 	application.listen(config.getint('bankwebapp','port'))
 	logging.getLogger('webserver').info('<!> bank webapp initialized')
 	main_loop.start()
