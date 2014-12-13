@@ -1,0 +1,13 @@
+{
+	"name":"bank-webapp",
+	"version":"0.0.1",
+	"devDependencies":{
+		"http-server":"^0.6.1"
+	},	
+	"scripts":{
+		"start":"http-server -a bank-dev -p 8000"
+	},
+	"engines":{
+		"node":"~0.10.32"
+	}
+}
