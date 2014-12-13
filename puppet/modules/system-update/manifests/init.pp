@@ -11,6 +11,7 @@ class system-update{
 		"curl",
 		"wget",
 		"vim",
+		"git",
 		"openssl-devel",
 		"nodejs",
 		"nodejs-devel",
