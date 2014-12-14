@@ -24,13 +24,6 @@ class setup_bank_webapp{
 		user => vagrant,
 		timeout => 0
 	}->
-	exec{"install-requirements":
-		command => '/home/vagrant/bankEnv/bin/pip install -r requirements.txt',
-		cwd => '/vagrant/server',
-		path => $bank_path,
-		user => vagrant,
-		timeout => 0
-	}->
 	exec{"setup":
 		command => '/home/vagrant/bankEnv/bin/python setup.py develop',
 		cwd => '/vagrant/server',
