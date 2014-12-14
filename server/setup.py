@@ -10,7 +10,8 @@ install_requires = [
 	'colour-runner'
 ]
 
-setup(name='Bank',
+setup(
+	name='Bank',
 	version=version,
 	description=('For managing banking needs'),
 	author='David Parr',
@@ -20,5 +21,4 @@ setup(name='Bank',
 	entry_points={
 		'console_scripts':['bankwebapp = bank.webserver:main']
 	}
-
 )
