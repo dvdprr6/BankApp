@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "oel65-64"
   config.vm.hostname = "bank-dev"
   config.vm.network :forwarded_port, guest: 8888, host: 8888
-  config.vm.network :forwarded_port, guest: 8000, host: 8000
+  config.vm.network :forwarded_port, guest: 1234, host: 1234
   config.vm.synced_folder "./", "/vagrant"
   config.ssh.forward_agent = true
   
@@ -49,8 +49,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   #
   # webapp setup
-  # config.vm.provision :puppet do |puppet|
-  #   puppet.manifests_path = "puppet/manifests"
-  #   puppet.manifest_file = "setup_webapp.pp"
-  # end
+  config.vm.provision :puppet do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file = "setup_webapp.pp"
+  end
 end
