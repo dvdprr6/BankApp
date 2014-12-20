@@ -8,6 +8,10 @@ from sqlalchemy import (create_engine, Table, Column, Integer,
 from sqlalchemy.orm import relationship, column_property, backref
 from sqlalchemy.ext.declarative import declarative_base
 
+log = logging.getLogger(__name__)
+
+DATE_FORMAT = '%Y-%m-%d'
+
 Base = declarative_base()
 
 class GeneralStatementInfo(Base):
@@ -29,7 +33,7 @@ class GeneralStatementInfo(Base):
 			'rate':self.rate,
 			'hours':self.hours,
 			'company_name':self.company_name,
-			'payment_date':self.payment_date
+			'payment_date':self.payment_date.strftime(DATE_FORMAT)
 		}
 
 class EarningsDeductionsAssociation(Base):
