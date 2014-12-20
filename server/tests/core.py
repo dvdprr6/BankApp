@@ -22,6 +22,7 @@ def get_db():
 
 	return database
 
+# TODO: Is this class even needed?
 class BaseTestCase(LogTrapTestCase):
 
 	def setUp(self):
