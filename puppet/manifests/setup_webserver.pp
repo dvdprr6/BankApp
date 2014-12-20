@@ -3,9 +3,9 @@
 #
 
 class setup_bank_webapp{
-	$bank_path = '/usr/local/bin/:/usr/local/:/usr/bin/:/bin/:/opt/python3.3/bin'
+	$bank_path = '/usr/local/bin/:/usr/local/:/usr/bin/:/bin/:/opt/python3.4/bin'
 	exec{"python-env":
-		command => '/opt/python3.3/bin/python3.3 -m venv /home/vagrant/bankEnv',
+		command => '/opt/python3.4/bin/python3.4 -m venv /home/vagrant/bankEnv',
 		cwd => '/home/vagrant',
 		path => $bank_path,
 		user => vagrant,

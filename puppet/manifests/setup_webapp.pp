@@ -3,7 +3,7 @@
 #
 
 class setup_webapp{
-	$bank_path = '/usr/local/bin/:/usr/local/:/usr/bin/:/bin/:/opt/python3.3/bin'
+	$bank_path = '/usr/local/bin/:/usr/local/:/usr/bin/:/bin/:/opt/python3.4/bin'
 	exec{"install-bower":
 		command => 'npm install -g bower',
 		cwd => '/home/vagrant/',

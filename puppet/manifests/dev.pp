@@ -4,7 +4,6 @@
 
 
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
-#Exec { path => ["/usr/local/bin", "/bin/", "/usr/bin", "/usr/local/sbin", "/usr/sbin", "/sbin/", "/home/vagrant/bin"]}
 
 class bankwebapp{
 	file{"/etc/rc.d/init.d/bankwebapp":
@@ -17,9 +16,9 @@ class bankwebapp{
 		ensure => 'directory'
 	}->
 	exec{"download-python3":
-		command => 'wget -q http://www.python.org/ftp/python/3.3.5/Python-3.3.5.tar.xz --no-check-certificate',
+		command => 'wget -q http://www.python.org/ftp/python/3.4.2/Python-3.4.2.tar.xz --no-check-certificate',
 		cwd => '/home/vagrant/',
-		creates => '/home/vagrant/Python-3.3.5.tar.xz',
+		creates => '/home/vagrant/Python-3.4.2.tar.xz',
 		user => vagrant,
 		timeout => 0
 	}
