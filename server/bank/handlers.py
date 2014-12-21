@@ -21,8 +21,10 @@ class BaseRequestHandler(tornado.web.RequestHandler):
 	Work Statement API
 '''
 from .work_statement.handlers import MainHandler
+from .work_statement.handlers import GeneralStatementInfoHandler
 
 work_statement_api = [
-	(r'/?', MainHandler)
+	(r'/work_statement/?', MainHandler),
+	(r'/work_statement/general_statement_info/?', GeneralStatementInfoHandler)
 
 ]

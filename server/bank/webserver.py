@@ -41,7 +41,6 @@ class WebApplication(tornado.web.Application):
 		self.config = config
 
 		handlers = []
-		#handlers.append((r'/', MainHandler))
 		handlers += work_statement_handlers 
 
 		tornado.web.Application.__init__(self, handlers, **settings)
