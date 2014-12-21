@@ -22,27 +22,6 @@ def get_db():
 
 	return database
 
-# TODO: Is this class even needed?
-class BaseTestCase(LogTrapTestCase):
-
-	def setUp(self):
-		self.db = get_db()
-		self.config = config
-		self.start()
-
-	def tearDown(self):
-		self.end():
-		self.db.remove()
-
-	def start(self):
-		pass
-
-	def end(self):
-		pass
-
-	def get_app(self):
-		return app
-
 class BaseAppTestCase(AsyncHTTPTestCase, LogTrapTestCase):
 
 	def setUp(self):

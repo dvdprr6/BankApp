@@ -17,7 +17,7 @@ def run_all_tests():
 	except:
 		runner = unittest.TextTestRunner(verbosity=2)
 	result = runner.run(all_tests)
-	return results
+	return result
 
 '''
 Usage : python tests/bank_tests.py
