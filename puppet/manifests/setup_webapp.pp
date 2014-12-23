@@ -29,3 +29,4 @@ class setup_webapp{
 }
 
 include setup_webapp
+include raml2html
