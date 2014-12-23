@@ -1,0 +1,102 @@
+#%RAML 0.8
+title: API documentation for work statement
+
+baseUri: http://bank-dev:1234/
+schemas:
+  - general_statement_info_request: |
+      {
+        "$schema":"http://json-schema.org/draft-03/schema",
+        "type":"object",
+        "description":"The canonical general statement representation",
+        "properties":{
+          "rate":{
+            "type":"float"
+          },
+          "hours":{
+            "type":"float"
+          },
+          "company_name":{
+            "type":"string"
+          },
+          "payment_date":{
+            "type":"datetime"
+          }
+        },
+        "required":["rate", "hours", "company_name"]
+      }
+  - general_statement_info_response: |
+      {
+        "$schema":"http://json-schema.org/draft-03/schema",
+        "type":"object",
+        "description":"The response of a successful post of general statement information",
+        "properties":{
+          "id":{
+            "type":"int"
+          },
+          "rate":{
+            "type":"float"
+          },
+          "hours":{
+            "type":"float"
+          },
+          "company_name":{
+            "type":"string"
+          },
+          "payment_date":{
+            "type":"datetime"
+          }
+        },
+        "required":["id","rate", "hours", "company_name", "payment_date"]
+      }
+  - internal_server_error: |
+      {
+        "$schema":"http://json-schema.org/draft-03/schema",
+        "type":"object",
+        "description":"For a 500 response code",
+        "properties":{
+          "error":{
+            "message":"Internal Server Error"
+          }
+        }
+      }
+  - bad_request: |
+      {
+        "$schema":"http://json-schema.org/draft-03/schame",
+        "type":"object",
+        "description":"For a 400 response code",
+        "properties":{
+          "error":{
+            "message":"Bad Request: Invalid JSON"
+          },
+          "error":{
+            "message":"Bad Request: Missing attribute"
+          }
+        }
+      }
+resourceTypes:
+  - base:
+      post?:
+        responses: &standardResponses
+          201:
+            description: OK
+  - collection:
+      type: base
+      post:
+        body:
+          application/json:
+            schema: <<schema>>
+        responses:
+          201:
+            body:
+              application/json:
+                schema: general_statement_info_response
+          400:
+            body:
+              application/json:
+                schema: bad_request
+          500:
+            body:
+              application/json:
+                schema: internal_server_error
+/work_statement/general_statement_info:
+  type: { collection: {schema: general_statement_info_request } }
