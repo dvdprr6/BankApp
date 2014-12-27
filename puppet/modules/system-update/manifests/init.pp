@@ -3,7 +3,7 @@
 #
 
 class system-update{
-	exec{'yum update':
+	exec{'yum-update':
 		command => 'yum update -y',
 		timeout => 0
 	}
@@ -19,10 +19,11 @@ class system-update{
 		"sqlite-devel",
 		"sqlite",
 		"postgresql",
-		"postgresql-devel"
+		"postgresql-devel",
+		"nginx"
 	]
 	package{$sysPackages:
 		ensure => "latest",
-		require => Exec['yum update']
+		require => Exec['yum-update']
 	}
 }
