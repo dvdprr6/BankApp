@@ -2,7 +2,20 @@ body{
 	padding-top: 50px;
 }
 
-.starter-template{
-	padding: 40px 15px;
+.title-container{
+	padding-top: 40px;
+	padding-right: 15px;
+	text-align: center;
+}
+
+.border{
+	border-width: 1px;
+	border-bottom-style: solid;
+	border-color: rgb(202, 202, 202);
+}
+
+.page-container{
+	padding-top: 40px;
+	padding-right: 15px;
 	text-align: left;
 }
