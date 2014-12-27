@@ -1,1 +1,28 @@
-<p>Hello World!</p>
+<!DOCTYPE html>
+<html lang="en" ng-app="bankApp" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>My Bankapp</title>
+
+		<!--STYLES-->
+		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="styles/app.css" rel="stylesheet">
+		<!--END OF STYLES-->
+	</head>
+	<body>
+		<div ng-controller="menubarController">
+			<menubar></menubar>
+		</div>
+
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		
+		<script src="scripts/app.js"></script>
+		<script src="scripts/controllers.js"></script>
+		<script src="scripts/directives.js"></script>
+	</body>
+</html>
