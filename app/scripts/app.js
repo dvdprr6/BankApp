@@ -5,6 +5,9 @@ angular.module('bankApp', [
 	'bankApp.directives',
 	'ngRoute'
 	])
-	// .config(['$routeProvider', function($routeProvider){
-
-	// }]);
+	.config(['$routeProvider', function($routeProvider){
+		$routeProvider.when('/work_statement', {
+			templateUrl: 'templates/work-statement.html',
+			controller: 'workStatementController'
+		});
+	}]);
