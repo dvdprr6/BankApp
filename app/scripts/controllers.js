@@ -9,3 +9,8 @@ angular.module('bankApp.controllers',[
 			work_statement: 'Work Statement'
 		};
 	}])
+	.controller('workStatementController', ['$scope', function($scope){
+		$scope.dialogs = {
+			title: 'Statement of Earnings and Deductions'
+		}
+	}])
