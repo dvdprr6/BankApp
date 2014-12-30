@@ -1,9 +1,4 @@
 class nginx{
-	# exec{"start-nginx":
-	# 	command => 'service nginx start',
-	# 	cwd => '/home/vagrant',
-	# 	user => root
-	# }->
 	file{"/etc/nginx":
 		ensure => 'directory'
 	}->
