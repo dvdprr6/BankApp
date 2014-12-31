@@ -7,7 +7,7 @@ angular.module('bankApp', [
 	])
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/work_statement', {
-			templateUrl: 'templates/work-statement.html',
+			templateUrl: 'templates/work_statement.html',
 			controller: 'workStatementController'
 		});
 	}]);
