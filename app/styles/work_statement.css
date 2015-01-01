@@ -1,7 +1,14 @@
 .sub-title-container{
 	font-size:26px;
-	padding-top: 15px;
+	padding-top: 5px;
 	padding-right: 15px;
-	padding-left: 17px;
+	padding-left: 35px;
 	text-align: left;
+}
+
+.my-col-6{
+	width: 49%;
+	float: left;
+	padding-left: 50px;
+	padding-top: 10px;
 }
