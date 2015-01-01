@@ -1,12 +1,56 @@
 <div ng-controller="workStatementController">
 	<div class="container">
-		<div class="title-container">
-			Statement of Earnings and Deductions
+		<div class="row">
+			<div class="title-container">
+				<h1>Statement of Earnings and Deductions</h1>
+			</div>
 		</div>
 		<div class="border"></div>
-		<div class="sub-title-container">
-			Input Earnings and Deductions
+		<div class="row">
+			<div class="sub-title-container">
+				<h2>Input Earnings and Deductions</h2>
+			</div>
+			<div class="row">
+				<div class="my-col-6">
+					<label>Company</label>
+					<input class="form-control">
+				</div>
+				<div class="my-col-6">
+					<label>Rate</label>
+					<input class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="my-col-6">
+					<label>Payment Date</label>
+					<input class="form-control">
+				</div>
+				<div class="my-col-6">
+					<label>Hours</label>
+					<input class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="my-col-6">
+					<button type="button" class="btn btn-success">Submit</button>
+					<button type="button" class="btn btn-danger">Reset</button>
+				</div>
+			</div>
 		</div>
 		<div class="border"></div>
-	</div>
+		<div class="row">
+			<div class="sub-title-container">
+				<h2>Statements of Earnings and Deductions</h2>
+			</div>
+			<div class="row">
+				<div class="my-col-6">
+					<label>Select Company</label>
+					<select class="form-control"></select>
+				</div>
+				<div class="my-col-6">
+					<label>Select Year</label>
+					<select class="form-control"></select>
+				</div>
+			</div>
+		</div>
 </div>
