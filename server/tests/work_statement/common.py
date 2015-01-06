@@ -5,15 +5,12 @@ from tornado.web import create_signed_value
 
 from tests.core import BaseAppTestCase
 from bank.db.models import GeneralStatementInfo
-from bank.db.models import DATE_FORMAT
-
-def date_handler(obj):
-	return obj.isoformat() if hasattr(obj, 'iosformat') else obj
 
 TEST_GENERAL_STATEMENT_INFO_DATA = {
 	'rate':23.00,
 	'hours':80.00,
 	'company_name':'Nuance',
+	'payment_date':datetime.date(2014, 5, 20)
 }
 
 GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES = [
