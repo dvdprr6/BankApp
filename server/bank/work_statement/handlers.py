@@ -70,10 +70,9 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 		field_keys = [
 			'rate',
 			'hours',
-			'company_name'
+			'company_name',
+			'payment_date'
 		]
-
-		field_keys = self._append_option_payment_date(field_keys, general_statement_info_data)
 
 		(code, message) = self.check_field_keys(field_keys, general_statement_info_data)
 		
@@ -95,6 +94,7 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 		except SQLAlchemyError as ex:
 			message = 'Internal Server Error: Unable to create general statement info'
 			code = 500
+			return code, message, ex
 		
 		return code, message, ex
 
@@ -102,9 +102,3 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 		response_body = {'data':[]}
 		response_body['data'].append(general_statement_info.to_dict())
 		return response_body
-
-	def _append_option_payment_date(self, field_keys, general_statement_info_data):
-		if 'payment_date' in general_statement_info_data:
-			field_keys.append('payment_date')
-
-		return field_keys
