@@ -5,25 +5,12 @@ from tornado.web import create_signed_value
 
 from tests.core import BaseAppTestCase
 from bank.db.models import GeneralStatementInfo
-
-TEST_GENERAL_STATEMENT_INFO_DATA = {
-	'rate':23.00,
-	'hours':80.00,
-	'company_name':'Nuance',
-	'payment_date':datetime.date(2014, 5, 20)
-}
-
-GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES = [
-	'rate',
-	'hours',
-	'company_name',
-	'payment_date'
-]
-
-ENDPOINTS = {
-	'home':'/work_statement/',
-	'general_statement_info':'/work_statement/general_statement_info/'
-}
+from .test_data import (
+	TEST_GENERAL_STATEMENT_INFO_DATA,
+	DEFAULT_TEST_GENERAL_STATEMENT_INFO_DATA,
+	GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES,
+	ENDPOINTS
+)
 
 class WorkStatementAPITestCase(BaseAppTestCase):
 
@@ -60,3 +47,25 @@ class WorkStatementAPITestCase(BaseAppTestCase):
 		}
 		return headers
 
+class InitializeGeneralStatementTestCase(WorkStatementAPITestCase):
+
+	def setUp(self):
+		super().setUp()
+		self._init_general_statement()
+
+	def tearDown(self):
+		self._remove_general_statement()
+		super().tearDown()
+
+	def _init_general_statement(self):
+		for general_statement_data in DEFAULT_TEST_GENERAL_STATEMENT_INFO_DATA:
+			general_statement = GeneralStatementInfo(**general_statement_data)
+			self.db.add(general_statement)
+		self.db.commit()
+		self.general_statement_info = self.db.query(GeneralStatementInfo).all()
+
+	def _remove_general_statement(self):
+		for general_statement_data in self.general_statement_info:
+			self.db.delete(general_statement_data)
+		self.db.commit()
+		self.general_statement_info = []

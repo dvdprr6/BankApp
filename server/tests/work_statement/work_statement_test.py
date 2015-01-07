@@ -2,8 +2,11 @@ import json
 import datetime
 
 from bank.db.models import GeneralStatementInfo
-from .common import WorkStatementAPITestCase
 from .common import (
+	WorkStatementAPITestCase, 
+	InitializeGeneralStatementTestCase
+)
+from .test_data import (
 	ENDPOINTS, 
 	TEST_GENERAL_STATEMENT_INFO_DATA, 
 	GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES
@@ -15,12 +18,14 @@ def serialize_date(obj):
 		serial = obj.isoformat()
 		return serial
 
-class TestWorkStatementHome(WorkStatementAPITestCase):
+class TestWorkStatementHome(InitializeGeneralStatementTestCase):
 	'''Standard cases on /work_statement/'''
 
 	def test_work_statement_home(self):
 		request_url = ENDPOINTS['home']
 		response = self.fetch(request_url, method='GET')
+		response_list = self.convert_byte_string_to_JSON(response)
+		# print(response_list)
 		self.assertEqual(response.code, 200)
 
 class TestGeneralStatementInfo(WorkStatementAPITestCase):
