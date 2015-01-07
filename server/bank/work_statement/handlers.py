@@ -27,11 +27,6 @@ class WorkStatementRequestHandler(BaseRequestHandler):
 		)
 		self.finish()
 
-	def exit_with_success(self, status_code, success_message):
-		self.set_status(status_code)
-		self.write(success_message)
-		self.finish()
-
 	def prepare(self):
 		if self.request.body:
 			try:
@@ -48,19 +43,48 @@ class WorkStatementRequestHandler(BaseRequestHandler):
 				code = 400
 		return code, error_message
 
-	def check_post_status_code(self, status_code, message, error_to_log):
+	def check_exit_status(self, status_code, message, error_to_log):
 		if status_code == 500 and error_to_log is not None:
 			self.exit_with_error(status_code, message, error_to_log)
 		elif status_code == 201 and error_to_log is None:
-			self.exit_with_success(status_code, message)
+			self._exit_with_success(status_code, message)
+		elif status_code == 200 and error_to_log is None:
+			self._exit_with_success(status_code, message)
 		
+	def _exit_with_success(self, status_code, success_message):
+		self.set_status(status_code)
+		self.write(success_message)
+		self.finish()
 
-class MainHandler(BaseRequestHandler):
+class MainHandler(WorkStatementRequestHandler):
+	
 	@tornado.web.asynchronous
 	def get(self):
-		self.set_status(200)
-		self.write("hello, world")
-		self.finish()
+		(code, message, exception_message) = self._get_all_general_statement_information()
+		self.check_exit_status(code, message, exception_message)
+
+	def _get_all_general_statement_information(self):
+		ex = None
+		try:
+			all_general_statement_info = self.db.query(GeneralStatementInfo).all()
+			message = self._all_general_statment_info_response_JSON(all_general_statement_info)
+			code = 200
+		except SQLAlchemyError as ex:
+			message = "Internal Server Error: Unable to get General Statement Info"
+			code = 500
+			return code, message, ex
+		
+		return code, message, ex
+
+	def _all_general_statment_info_response_JSON(self, all_general_statement_info):
+		response_body = {
+			'data':{
+					'general_statement_info':[]
+			}
+		}
+		for general_statement_info in all_general_statement_info:
+			response_body['data']['general_statement_info'].append(general_statement_info.to_dict())
+		return response_body
 
 class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 
@@ -80,7 +104,7 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 			self.exit_with_error(code, message)
 		else:
 			(code, message, exception_message) = self._add_general_statement_info(general_statement_info_data)
-			self.check_post_status_code(code, message, exception_message)
+			self.check_exit_status(code, message, exception_message)
 	
 	def _add_general_statement_info(self, general_statement_info_data):
 		ex = None
