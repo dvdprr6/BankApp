@@ -56,8 +56,8 @@ class TestGeneralStatementInfo(WorkStatementAPITestCase):
 			company_name=general_statement_info_data['company_name']
 		)
 		response_list = self.convert_byte_string_to_JSON(response)['data']
-		response_returned = self.retrieve_dictionary_keys(response_list[0].keys())
-		response_expected = self.retrieve_dictionary_keys(g_query.first().to_dict().keys())
+		response_returned = list(response_list[0].keys())
+		response_expected = list(g_query.first().to_dict().keys())
 		self.assertEqual(
 			sorted(response_returned),
 			sorted(response_expected)

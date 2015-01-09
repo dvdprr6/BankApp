@@ -27,12 +27,6 @@ class WorkStatementAPITestCase(BaseAppTestCase):
 	def convert_byte_string_to_JSON(self, response):
 		return json.loads(response.body.decode('utf-8'))
 
-	def retrieve_dictionary_keys(self, key_list):
-		key_values = []
-		for key in key_list:
-			key_values.append(key)
-		return key_values
-
 	def fetch_request(self, *args, **kwargs):
 		headers = self._authenticate_request()
 		headers['Content-Type'] = 'application/json'
@@ -69,3 +63,4 @@ class InitializeGeneralStatementTestCase(WorkStatementAPITestCase):
 			self.db.delete(general_statement_data)
 		self.db.commit()
 		self.general_statement_info = []
+

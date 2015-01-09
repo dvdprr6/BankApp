@@ -4,6 +4,8 @@ import json
 import tornado
 import tornado.gen
 
+from collections import OrderedDict
+
 from tornado.web import HTTPError
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -91,11 +93,8 @@ class MainHandler(WorkStatementRequestHandler):
 
 		for year in general_statement_info_all_dates:
 			years.append(year.to_dict_return_dates())
-
-		seen = set()
-		seen_add = seen.add
-
-		return [year for year in years if not (year in seen or seen_add(year))] # remove all duplicates in the list
+			
+		return list(OrderedDict.fromkeys(years))
 
 	def _get_companies(self, general_statement_info_all_companies):
 		companies = []
@@ -103,10 +102,7 @@ class MainHandler(WorkStatementRequestHandler):
 		for company in general_statement_info_all_companies:
 			companies.append(company.to_dict_return_companies())
 
-		seen = set()
-		seen_add = seen.add
-
-		return [company for company in companies if not (company in seen or seen_add(company))] # remove all duplicates in the list
+		return list(OrderedDict.fromkeys(companies))
 
 class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 
