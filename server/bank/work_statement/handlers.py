@@ -93,8 +93,9 @@ class MainHandler(WorkStatementRequestHandler):
 			years.append(year.to_dict_return_dates())
 
 		seen = set()
+		seen_add = seen.add
 
-		return [year for year in years if not (year in seen or seen.add(year))] # remove all duplicates in the list
+		return [year for year in years if not (year in seen or seen_add(year))] # remove all duplicates in the list
 
 	def _get_companies(self, general_statement_info_all_companies):
 		companies = []
@@ -103,8 +104,9 @@ class MainHandler(WorkStatementRequestHandler):
 			companies.append(company.to_dict_return_companies())
 
 		seen = set()
+		seen_add = seen.add
 
-		return [company for company in companies if not (company in seen or seen.add(company))] # remove all duplicates in the list
+		return [company for company in companies if not (company in seen or seen_add(company))] # remove all duplicates in the list
 
 class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 
