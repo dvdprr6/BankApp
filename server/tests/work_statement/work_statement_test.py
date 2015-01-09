@@ -55,12 +55,12 @@ class TestGeneralStatementInfo(WorkStatementAPITestCase):
 		g_query = self.db.query(GeneralStatementInfo).filter_by(
 			company_name=general_statement_info_data['company_name']
 		)
-		response_list = self.convert_byte_string_to_JSON(response)['data']
-		response_returned = list(response_list[0].keys())
 		response_expected = list(g_query.first().to_dict().keys())
+		self.db.delete(g_query.first())
+		self.db.commit()
+		response_list = self.convert_byte_string_to_JSON(response)['data']['general_statement_info']
+		response_returned = list(response_list.keys())
 		self.assertEqual(
 			sorted(response_returned),
 			sorted(response_expected)
 		)
-		self.db.delete(g_query.first())
-		self.db.commit()

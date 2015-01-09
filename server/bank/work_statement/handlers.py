@@ -93,7 +93,7 @@ class MainHandler(WorkStatementRequestHandler):
 
 		for year in general_statement_info_all_dates:
 			years.append(year.to_dict_return_dates())
-			
+
 		return list(OrderedDict.fromkeys(years))
 
 	def _get_companies(self, general_statement_info_all_companies):
@@ -141,6 +141,11 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 		return code, message, ex
 
 	def _general_statement_info_response_JSON(self, general_statement_info):
-		response_body = {'data':[]}
-		response_body['data'].append(general_statement_info.to_dict())
+		# response_body = {'data':[]}
+		# response_body['data'].append(general_statement_info.to_dict())
+		response_body = {
+			'data':{
+				'general_statement_info': general_statement_info.to_dict()
+			}
+		}
 		return response_body
