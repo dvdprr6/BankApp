@@ -141,8 +141,6 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 		return code, message, ex
 
 	def _general_statement_info_response_JSON(self, general_statement_info):
-		# response_body = {'data':[]}
-		# response_body['data'].append(general_statement_info.to_dict())
 		response_body = {
 			'data':{
 				'general_statement_info': general_statement_info.to_dict()
