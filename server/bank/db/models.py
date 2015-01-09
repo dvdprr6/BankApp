@@ -11,6 +11,7 @@ from sqlalchemy.ext.declarative import declarative_base
 log = logging.getLogger(__name__)
 
 DATE_FORMAT = '%Y-%m-%d'
+RETURN_YEAR_FORMAT = '%Y'
 
 Base = declarative_base()
 
@@ -35,6 +36,12 @@ class GeneralStatementInfo(Base):
 			'company_name':self.company_name,
 			'payment_date':self.payment_date.strftime(DATE_FORMAT)
 		}
+
+	def to_dict_return_dates(self):
+		return self.payment_date.strftime(RETURN_YEAR_FORMAT)
+
+	def to_dict_return_companies(self):
+		return self.company_name
 
 class EarningsDeductionsAssociation(Base):
 

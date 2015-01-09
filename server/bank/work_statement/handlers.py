@@ -60,31 +60,51 @@ class MainHandler(WorkStatementRequestHandler):
 	
 	@tornado.web.asynchronous
 	def get(self):
-		(code, message, exception_message) = self._get_all_general_statement_information()
+		(code, message, exception_message) = self._get_years_and_companies()
 		self.check_exit_status(code, message, exception_message)
 
-	def _get_all_general_statement_information(self):
+	def _get_years_and_companies(self):
 		ex = None
 		try:
-			all_general_statement_info = self.db.query(GeneralStatementInfo).all()
-			message = self._all_general_statment_info_response_JSON(all_general_statement_info)
+			general_statement_info_data = self.db.query(GeneralStatementInfo).all()
+			message = self._all_years_and_companies_response_JSON(general_statement_info_data)
 			code = 200
 		except SQLAlchemyError as ex:
-			message = "Internal Server Error: Unable to get General Statement Info"
+			message = 'Interal Server Error: Unable to get dates'
 			code = 500
 			return code, message, ex
-		
+
 		return code, message, ex
 
-	def _all_general_statment_info_response_JSON(self, all_general_statement_info):
+	def _all_years_and_companies_response_JSON(self, general_statement_info_data):
 		response_body = {
 			'data':{
-					'general_statement_info':[]
+				'years': self._get_years(general_statement_info_data),
+				'companies':self._get_companies(general_statement_info_data)
 			}
 		}
-		for general_statement_info in all_general_statement_info:
-			response_body['data']['general_statement_info'].append(general_statement_info.to_dict())
+
 		return response_body
+
+	def _get_years(self, general_statement_info_all_dates):
+		years = []
+
+		for year in general_statement_info_all_dates:
+			years.append(year.to_dict_return_dates())
+
+		seen = set()
+
+		return [year for year in years if not (year in seen or seen.add(year))] # remove all duplicates in the list
+
+	def _get_companies(self, general_statement_info_all_companies):
+		companies = []
+
+		for company in general_statement_info_all_companies:
+			companies.append(company.to_dict_return_companies())
+
+		seen = set()
+
+		return [company for company in companies if not (company in seen or seen.add(company))] # remove all duplicates in the list
 
 class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 

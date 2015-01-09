@@ -9,7 +9,8 @@ from .common import (
 from .test_data import (
 	ENDPOINTS, 
 	TEST_GENERAL_STATEMENT_INFO_DATA, 
-	GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES
+	GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES,
+	DEFAULT_TEST_WORK_STATEMENT_HOME_RETURN_ATTRIBUTES
 )
 
 # solves the issue of the date can't be json serialized
@@ -23,10 +24,20 @@ class TestWorkStatementHome(InitializeGeneralStatementTestCase):
 
 	def test_work_statement_home(self):
 		request_url = ENDPOINTS['home']
+		expected_response_list_years = DEFAULT_TEST_WORK_STATEMENT_HOME_RETURN_ATTRIBUTES['years']
+		expected_response_list_companies = DEFAULT_TEST_WORK_STATEMENT_HOME_RETURN_ATTRIBUTES['companies']
 		response = self.fetch(request_url, method='GET')
-		response_list = self.convert_byte_string_to_JSON(response)
-		# print(response_list)
 		self.assertEqual(response.code, 200)
+		returned_response_list_years = self.convert_byte_string_to_JSON(response)['data']['years']
+		returned_response_list_companies = self.convert_byte_string_to_JSON(response)['data']['companies']
+		self.assertEqual(
+			sorted(returned_response_list_years),
+			sorted(expected_response_list_years)
+		)
+		self.assertEqual(
+			sorted(returned_response_list_companies),
+			sorted(expected_response_list_companies)
+		)
 
 class TestGeneralStatementInfo(WorkStatementAPITestCase):
 	'''Standard cases on /work_statement/general_statement_info/'''
@@ -41,7 +52,9 @@ class TestGeneralStatementInfo(WorkStatementAPITestCase):
 			body=json.dumps(general_statement_info_data, default=serialize_date)
 		)
 		self.assertEqual(response.code, 201)
-		g_query = self.db.query(GeneralStatementInfo).filter_by(company_name=general_statement_info_data['company_name'])
+		g_query = self.db.query(GeneralStatementInfo).filter_by(
+			company_name=general_statement_info_data['company_name']
+		)
 		response_list = self.convert_byte_string_to_JSON(response)['data']
 		response_returned = self.retrieve_dictionary_keys(response_list[0].keys())
 		response_expected = self.retrieve_dictionary_keys(g_query.first().to_dict().keys())

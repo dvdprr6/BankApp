@@ -384,6 +384,11 @@ DEFAULT_TEST_GENERAL_STATEMENT_INFO_DATA = [
 
 ]
 
+DEFAULT_TEST_WORK_STATEMENT_HOME_RETURN_ATTRIBUTES = {
+	'companies':['Longbow Advantage', 'Nuance Communications Inc.'],
+	'years':['2011','2012', '2014']
+}
+
 GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES = [
 	'rate',
 	'hours',
