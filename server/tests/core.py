@@ -12,15 +12,15 @@ config.read('conf/test/bank.conf')
 
 app = WebApplication(config=config)
 
-def get_db():
-	database = scoped_session(sessionmaker(
-		bind=engine_from_config({
-			'sqlalchemy.url':config.get('sqlalchemy','url'),
-			'sqlalchemy.echo':config.getboolean('sqlalchemy','echo')
-		})
-	))
+# def get_db():
+# 	database = scoped_session(sessionmaker(
+# 		bind=engine_from_config({
+# 			'sqlalchemy.url':config.get('sqlalchemy','url'),
+# 			'sqlalchemy.echo':config.getboolean('sqlalchemy','echo')
+# 		})
+# 	))
 
-	return database
+# 	return database
 
 class BaseAppTestCase(AsyncHTTPTestCase, LogTrapTestCase):
 
