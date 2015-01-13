@@ -1,102 +1,102 @@
 #%RAML 0.8
 title: API documentation for work statement
-
 baseUri: http://bank-dev:1234/
+version: v1
+
 schemas:
-  - general_statement_info_request: |
+  - general_statement_info: |
       {
         "$schema":"http://json-schema.org/draft-03/schema",
         "type":"object",
-        "description":"The canonical general statement representation",
+        "description":"The conanical general statement representation",
         "properties":{
           "rate":{
-            "type":"float"
+            "type":"float",
+            "required":true
           },
           "hours":{
-            "type":"float"
+            "type":"float",
+            "required":true
           },
           "company_name":{
-            "type":"string"
+            "type":"string",
+            "required":true
           },
           "payment_date":{
-            "type":"datetime"
-          }
-        },
-        "required":["rate", "hours", "company_name"]
-      }
-  - general_statement_info_response: |
-      {
-        "$schema":"http://json-schema.org/draft-03/schema",
-        "type":"object",
-        "description":"The response of a successful post of general statement information",
-        "properties":{
-          "id":{
-            "type":"int"
-          },
-          "rate":{
-            "type":"float"
-          },
-          "hours":{
-            "type":"float"
-          },
-          "company_name":{
-            "type":"string"
-          },
-          "payment_date":{
-            "type":"datetime"
-          }
-        },
-        "required":["id","rate", "hours", "company_name", "payment_date"]
-      }
-  - internal_server_error: |
-      {
-        "$schema":"http://json-schema.org/draft-03/schema",
-        "type":"object",
-        "description":"For a 500 response code",
-        "properties":{
-          "error":{
-            "message":"Internal Server Error"
+            "type":"datetime",
+            "required":true
           }
         }
       }
-  - bad_request: |
-      {
-        "$schema":"http://json-schema.org/draft-03/schame",
-        "type":"object",
-        "description":"For a 400 response code",
-        "properties":{
-          "error":{
-            "message":"Bad Request: Invalid JSON"
-          },
-          "error":{
-            "message":"Bad Request: Missing attribute"
-          }
-        }
-      }
+
 resourceTypes:
-  - base:
-      post?:
-        responses: &standardResponses
-          201:
-            description: OK
-  - collection:
-      type: base
+  - general_statement_info:
       post:
+        description: For submiting the hours, rate, payment date, and company name
         body:
           application/json:
-            schema: <<schema>>
-        responses:
-          201:
-            body:
-              application/json:
-                schema: general_statement_info_response
-          400:
-            body:
-              application/json:
-                schema: bad_request
-          500:
-            body:
-              application/json:
-                schema: internal_server_error
+            schema: general_statement_info
+
+/work_statement:
+  description: home page for the work statement
+  get:
+    description: return the list of years and companies
+    responses:
+      200:
+        description: OK
+        body:
+          application/json:
+            example: |
+              {
+                "data":{
+                  "years":["2011","2012","2013","2014"],
+                  "companies":["Longbow Advantage","Nuance Communications Inc."]
+                }
+              }
+      500:
+        description: Request was not successfully processed
+        body:
+          application/json:
+            example: |
+              {
+                "error":{
+                  "message":"Internal Server Error: Unable to get list of companies and years"
+                }
+              }
+
 /work_statement/general_statement_info:
-  type: { collection: {schema: general_statement_info_request } }
+  description: For submiting the hours, rate, payment date, and company name
+  type: general_statement_info
+  post:
+    body:
+      application/json:
+         example: |
+           {
+            "rate":23.00,
+            "hours":80.00,
+            "company_name":"Nuance Communications Inc.",
+            "payment_date":"2014-05-20"
+           }
+    responses:
+      201:
+        description: OK
+      400:
+        description: If the input format does not respect the requirements
+        body:
+          application/json:
+            example: |
+              {
+                "error":{
+                  "message":"Bad Request"
+                }
+              }
+      500:
+        description: Request was not successfully processed
+        body:
+          application/json:
+            example: |
+              {
+                "error":{
+                  "message":"Internal Server Error: Unable to add general statement info"
+                }
+              }
