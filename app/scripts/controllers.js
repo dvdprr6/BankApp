@@ -10,8 +10,15 @@ angular.module('bankApp.controllers',[
 		};
 	}])
 	.controller('workStatementController', ['$scope', function($scope){
-		$scope.dialogs = {
-			title: 'Statement of Earnings and Deductions',
-			sub_title_one: 'Input Earnings and Deductions'
+		$scope.valueReturn = {
+			data:{
+				companies:['Longbow Advantage','Nuance Communications Inc.'],
+				years:['2011','2012', '2014']
+			}
 		}
+		$scope.companyList = $scope.valueReturn.data.companies
+		console.log($scope.companyList)
+		$scope.company = $scope.companyList[0]
+		$scope.yearList = $scope.valueReturn.data.years
+		$scope.year = $scope.yearList[0]
 	}])

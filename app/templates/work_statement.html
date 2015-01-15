@@ -45,11 +45,24 @@
 			<div class="row">
 				<div class="my-col-6">
 					<label>Select Company</label>
-					<select class="form-control"></select>
+					<select 
+						class="form-control" 
+						ng-model="company" 
+						ng-options="comp for comp in companyList">
+					</select>
 				</div>
 				<div class="my-col-6">
 					<label>Select Year</label>
-					<select class="form-control"></select>
+					<select 
+						class="form-control" 
+						ng-model="year" 
+						ng-options="y for y in yearList">
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="my-col-6">
+					<button type="button" class="btn btn-success">Submit</button>
 				</div>
 			</div>
 		</div>
