@@ -8,6 +8,12 @@ TEST_GENERAL_STATEMENT_INFO_DATA = {
 	'payment_date':datetime.date(2014, 5, 20)
 }
 
+TEST_INVALID_GENERAL_STATEMENT_INFO_DATA = {
+	'fate':23.00,
+	'nours':80.00,
+	'date':datetime.date(2014, 4, 20)
+}
+
 DEFAULT_TEST_GENERAL_STATEMENT_INFO_DATA = [
 	{
 		'rate':15.00,
