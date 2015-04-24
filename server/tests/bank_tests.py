@@ -11,7 +11,6 @@ def get_all_tests():
 
 def run_all_tests():
 	all_tests = get_all_tests()
-
 	try:
 		runner = ColourTextTestRunner(verbosity=2)
 	except:
