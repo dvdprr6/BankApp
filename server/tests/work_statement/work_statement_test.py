@@ -10,7 +10,8 @@ from .test_data import (
 	ENDPOINTS, 
 	TEST_GENERAL_STATEMENT_INFO_DATA, 
 	GENERAL_STATEMENT_INFO_RETURN_ATTRIBUTES,
-	DEFAULT_TEST_WORK_STATEMENT_HOME_RETURN_ATTRIBUTES
+	DEFAULT_TEST_WORK_STATEMENT_HOME_RETURN_ATTRIBUTES,
+	TEST_INVALID_GENERAL_STATEMENT_INFO_DATA
 )
 
 # solves the issue of the date can't be json serialized
@@ -64,3 +65,14 @@ class TestGeneralStatementInfo(WorkStatementAPITestCase):
 			sorted(response_returned),
 			sorted(response_expected)
 		)
+
+	def test_invalid_post_general_statement_info(self):
+		request_url = ENDPOINTS['general_statement_info']
+		invalid_general_statement_info_data = TEST_INVALID_GENERAL_STATEMENT_INFO_DATA
+		response = self.fetch_request(
+			request_url,
+			method='POST',
+			body=json.dumps(invalid_general_statement_info_data, default=serialize_date)
+		)
+		self.assertEqual(response.code, 400)
+
