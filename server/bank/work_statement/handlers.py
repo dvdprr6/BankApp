@@ -20,13 +20,7 @@ class WorkStatementRequestHandler(BaseRequestHandler):
 		if error_to_log:
 			log.error(error_to_log)
 		self.set_status(status_code)
-		self.write(
-			{
-				'error':{
-					'message': error_message
-				}
-			}
-		)
+		self.write({'error':{'message':error_message}})
 		self.finish()
 
 	def prepare(self):
@@ -42,67 +36,51 @@ class WorkStatementRequestHandler(BaseRequestHandler):
 		for key in field_keys:
 			if not key in data:
 				error_message = 'Bad Request: Missing attribute: {0}'.format(key)
-				code = 400
 		return code, error_message
 
-	def check_exit_status(self, status_code, message, error_to_log):
-		if status_code == 500 and error_to_log is not None:
-			self.exit_with_error(status_code, message, error_to_log)
-		elif status_code == 201 and error_to_log is None:
-			self._exit_with_success(status_code, message)
-		elif status_code == 200 and error_to_log is None:
-			self._exit_with_success(status_code, message)
-		
-	def _exit_with_success(self, status_code, success_message):
+	def exit_with_success(self, status_code, message):
 		self.set_status(status_code)
-		self.write(success_message)
+		if message != None:
+			self.write(message)
 		self.finish()
 
 class MainHandler(WorkStatementRequestHandler):
-	
+
 	@tornado.web.asynchronous
 	def get(self):
-		(code, message, exception_message) = self._get_years_and_companies()
-		self.check_exit_status(code, message, exception_message)
-
-	def _get_years_and_companies(self):
-		ex = None
 		try:
-			general_statement_info_data = self.db.query(GeneralStatementInfo).all()
-			message = self._all_years_and_companies_response_JSON(general_statement_info_data)
+			general_statement_info = self.db.query(GeneralStatementInfo).all()
+
+			response_body = self._get_years_and_companies(general_statement_info)
 			code = 200
 		except SQLAlchemyError as ex:
-			message = 'Interal Server Error: Unable to get dates'
+			response_body = 'Internal Server Error: Unable to get list of companies and years'
 			code = 500
-			return code, message, ex
 
-		return code, message, ex
+		if code == 200:
+			self.exit_with_success(code, response_body)
+		elif code == 500:
+			self.exit_with_error(code, response_body, ex)
 
-	def _all_years_and_companies_response_JSON(self, general_statement_info_data):
+
+	def _get_years_and_companies(self, general_statement_info):
+		years = []
+		companies = []
+
+		for year in general_statement_info:
+			years.append(year.to_dict_return_dates())
+
+		for company in general_statement_info:
+			companies.append(company.to_dict_return_companies())
+
 		response_body = {
 			'data':{
-				'years': self._get_years(general_statement_info_data),
-				'companies':self._get_companies(general_statement_info_data)
+				'years': list(OrderedDict.fromkeys(years)),
+				'companies': list(OrderedDict.fromkeys(companies))
 			}
 		}
 
 		return response_body
-
-	def _get_years(self, general_statement_info_all_dates):
-		years = []
-
-		for year in general_statement_info_all_dates:
-			years.append(year.to_dict_return_dates())
-
-		return list(OrderedDict.fromkeys(years))
-
-	def _get_companies(self, general_statement_info_all_companies):
-		companies = []
-
-		for company in general_statement_info_all_companies:
-			companies.append(company.to_dict_return_companies())
-
-		return list(OrderedDict.fromkeys(companies))
 
 class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 
@@ -116,34 +94,28 @@ class GeneralStatementInfoHandler(WorkStatementRequestHandler):
 			'payment_date'
 		]
 
-		(code, message) = self.check_field_keys(field_keys, general_statement_info_data)
-		
+		(code, response_body) = self.check_field_keys(field_keys, general_statement_info_data)
 		if code == 400:
-			self.exit_with_error(code, message)
+			self.exit_with_error(code, response_body)
 		else:
-			(code, message, exception_message) = self._add_general_statement_info(general_statement_info_data)
-			self.check_exit_status(code, message, exception_message)
-	
+			self._add_general_statement_info(general_statement_info_data)
+
 	def _add_general_statement_info(self, general_statement_info_data):
-		ex = None
-		
 		try:
 			general_statement_info = GeneralStatementInfo(**general_statement_info_data)
 			self.db.add(general_statement_info)
 			self.db.commit()
-			message = self._general_statement_info_response_JSON(general_statement_info)
 			code = 201
-		except SQLAlchemyError as ex:
-			message = 'Internal Server Error: Unable to create general statement info'
-			code = 500
-			return code, message, ex
-		
-		return code, message, ex
-
-	def _general_statement_info_response_JSON(self, general_statement_info):
-		response_body = {
-			'data':{
-				'general_statement_info': general_statement_info.to_dict()
+			request_body = {
+				'data':{
+					'general_statement_info':general_statement_info.to_dict()
+				}
 			}
-		}
-		return response_body
+		except SQLAlchemyError as ex:
+			request_body = 'Internal Server Error: Unable to create general statement info'
+			code = 500
+
+		if code == 201:
+			self.exit_with_success(201, request_body)
+		elif code == 500:
+			self.exit_with_error(code, response_body, ex)
