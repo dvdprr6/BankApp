@@ -58,13 +58,16 @@ def main():
 		print('port is required')
 		sys.exit(1)
 
-	logging.basicConfig(filename=config.get('bankwebapp', 'logpath'), level=logging.DEBUG)
-
+	#logging.basicConfig(filename=config.get('bankwebapp', 'logpath'), level=logging.DEBUG)
+	logging.config.fileConfig(args.config, disable_existing_loggers=0)
+	logging.getLogger('tornado').setLevel(config.getint('bankwebapp', 'logging'))
+	logging.getLogger('webserver').info('<!> bank webapp being initialized...')
 	'''INIT SERVER'''
 	main_loop = tornado.ioloop.IOLoop.instance()
 	application = WebApplication(config=config, main_loop=main_loop)
 	application.listen(config.getint('bankwebapp','port'))
-	logging.getLogger('webserver').info('<!> bank webapp initialized')
+	logging.getLogger('webserver').info('<!> bank webapp initialized (version = %s)' % ('0.0.1'))
+	logging.info("hello")
 	main_loop.start()
 
 if __name__ == "__main__":
